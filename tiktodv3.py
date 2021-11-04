@@ -1,5 +1,6 @@
 from selenium import webdriver
 from os import system, name
+from selenium.webdriver.common.by import By
 
 from time import time, strftime, gmtime, sleep
 import pyfiglet, os, threading
@@ -28,7 +29,7 @@ if auto == 1 or auto == 2 or auto == 3 or auto == 4:
     chrome_options.add_argument("--mute-audio")
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
-    driver = webdriver.Chrome(r"chromedriver.exe", options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
     driver.set_window_size(1024, 650)
 
     Views = 0
@@ -72,7 +73,7 @@ def loop1():
     sleep(10)
     
     try:
-        driver.find_element_by_xpath("/html/body/div[4]/div[1]/div[3]/div/div[4]/div/button").click()
+        driver.find_element(By.XPATH, "/html/body/div[4]/div[1]/div[3]/div/div[4]/div/button").click()
         
     except:
         print("[-] The captcha is unsolved!")
@@ -81,13 +82,13 @@ def loop1():
         
     try:
         sleep(2)
-        driver.find_element_by_xpath("//*[@id=\"sid4\"]/div/form/div/input").send_keys(vidUrl)
+        driver.find_element(By.XPATH, "//*[@id=\"sid4\"]/div/form/div/input").send_keys(vidUrl)
         
         sleep(1)
-        driver.find_element_by_xpath("//*[@id=\"sid4\"]/div/form/div/div/button").click()
+        driver.find_element(By.XPATH, "//*[@id=\"sid4\"]/div/form/div/div/button").click()
         
         sleep(5)
-        driver.find_element_by_xpath("//*[@id=\"c2VuZC9mb2xsb3dlcnNfdGlrdG9V\"]/div[1]/div/form/button").click()
+        driver.find_element(By.XPATH, "//*[@id=\"c2VuZC9mb2xsb3dlcnNfdGlrdG9V\"]/div[1]/div/form/button").click()
         
         driver.refresh()
         Views += 1000
@@ -106,7 +107,7 @@ def loop2():
     sleep(10)
     
     try:
-        driver.find_element_by_xpath("/html/body/div[4]/div[1]/div[3]/div/div[2]/div/button").click()
+        driver.find_element(By.XPATH, "/html/body/div[4]/div[1]/div[3]/div/div[2]/div/button").click()
         
     except:
         print("[-] The captcha is unsolved!")
@@ -145,7 +146,7 @@ def loop3():
     sleep(10)
     
     try:
-        driver.find_element_by_xpath("/html/body/div[4]/div[1]/div[3]/div/div[1]/div/button").click()
+        driver.find_element(By.XPATH, "/html/body/div[4]/div[1]/div[3]/div/div[1]/div/button").click()
         
     except:
         print("[-] The captcha is unsolved!")
@@ -154,13 +155,13 @@ def loop3():
         
     try:
         sleep(2)
-        driver.find_element_by_xpath("//*[@id=\"sid\"]/div/form/div/input").send_keys(vidUrl)
+        driver.find_element(By.XPATH, "//*[@id=\"sid\"]/div/form/div/input").send_keys(vidUrl)
         
         sleep(1)
-        driver.find_element_by_xpath("//*[@id=\"sid\"]/div/form/div/div/button").click()
+        driver.find_element(By.XPATH, "//*[@id=\"sid\"]/div/form/div/div/button").click()
         
         sleep(5)
-        driver.find_element_by_xpath("//*[@id=\"c2VuZF9mb2xsb3dlcnNfdGlrdG9r\"]/div[1]/div/form/button").click()
+        driver.find_element(By.XPATH, "//*[@id=\"c2VuZF9mb2xsb3dlcnNfdGlrdG9r\"]/div[1]/div/form/button").click()
         sleep(6)
         folls = driver.find_element_by_xpath('//*[@id="c2VuZF9mb2xsb3dlcnNfdGlrdG9r"]/span').text.split()
         
@@ -181,7 +182,7 @@ def loop4():
     sleep(10)
     
     try:
-        driver.find_element_by_xpath("/html/body/div[4]/div[1]/div[3]/div/div[5]/div/button").click()
+        driver.find_element(By.XPATH, "/html/body/div[4]/div[1]/div[3]/div/div[5]/div/button").click()
         
     except:
         print("[-] The captcha is unsolved!")
@@ -190,13 +191,13 @@ def loop4():
         
     try:
         sleep(2)
-        driver.find_element_by_xpath("//*[@id=\"sid7\"]/div/form/div/input").send_keys(vidUrl)
+        driver.find_element(By.XPATH, "//*[@id=\"sid7\"]/div/form/div/input").send_keys(vidUrl)
         
         sleep(1)
-        driver.find_element_by_xpath("//*[@id=\"sid7\"]/div/form/div/div/button").click()
+        driver.find_element(By.XPATH, "//*[@id=\"sid7\"]/div/form/div/div/button").click()
         
         sleep(5)
-        driver.find_element_by_xpath("//*[@id=\"c2VuZC9mb2xsb3dlcnNfdGlrdG9s\"]/div[1]/div/form/button").click()
+        driver.find_element(By.XPATH, "//*[@id=\"c2VuZC9mb2xsb3dlcnNfdGlrdG9s\"]/div[1]/div/form/button").click()
         
         driver.refresh()
         Shares += 100
